@@ -1,0 +1,2 @@
+// Placeholder for the Resource Management UI prefab.
+// Create a Unity UI Canvas with a panel, three sliders (water, soil, sunlight), a text label, and hook up to ResourceManagementPanel.cs.

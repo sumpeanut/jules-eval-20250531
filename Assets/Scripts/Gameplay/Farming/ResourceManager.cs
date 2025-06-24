@@ -7,7 +7,7 @@ namespace Game.Farming
     /// </summary>
     public class ResourceManager : MonoBehaviour
     {
-        [SerializeField] private FarmGrid farmGrid;
+        [SerializeField] public FarmGrid farmGrid;
 
         public void WaterCell(int x, int y, float amount)
         {
