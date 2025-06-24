@@ -13,7 +13,9 @@ namespace Tests.Game.Farming
             var grid = go.AddComponent<FarmGrid>();
             grid.Initialize();
             var manager = go.AddComponent<ResourceManager>();
-            manager.GetType().GetField("farmGrid", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(manager, grid);
+            manager.farmGrid = grid;
+            // Ensure the cell has no plant to avoid triggering Grow logic
+            grid.Cells[0, 0].Plant = null;
             float before = grid.Cells[0, 0].Resources.Water;
             manager.WaterCell(0, 0, 0.5f);
             Assert.Greater(grid.Cells[0, 0].Resources.Water, before);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Game.Farming;
 
 namespace Game.Farming
 {
@@ -8,28 +9,31 @@ namespace Game.Farming
     public class PlantView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private Sprite seedSprite;
-        [SerializeField] private Sprite sproutSprite;
-        [SerializeField] private Sprite matureSprite;
-        [SerializeField] private Sprite hybridSprite;
+        private PlantData plantData;
         [SerializeField] private Color lowResourceColor = Color.yellow;
         [SerializeField] private Color normalColor = Color.white;
 
+        public void SetPlantData(PlantData data)
+        {
+            plantData = data;
+        }
+
         public void UpdateVisual(PlantGrowthStage stage, bool lowResources, bool isHybrid)
         {
+            if (plantData == null) return;
             switch (stage)
             {
                 case PlantGrowthStage.Seed:
-                    spriteRenderer.sprite = seedSprite;
+                    spriteRenderer.sprite = plantData.seedSprite;
                     break;
                 case PlantGrowthStage.Sprout:
-                    spriteRenderer.sprite = sproutSprite;
+                    spriteRenderer.sprite = plantData.sproutSprite;
                     break;
                 case PlantGrowthStage.Mature:
-                    spriteRenderer.sprite = matureSprite;
+                    spriteRenderer.sprite = plantData.matureSprite;
                     break;
                 case PlantGrowthStage.Hybrid:
-                    spriteRenderer.sprite = hybridSprite;
+                    spriteRenderer.sprite = plantData.hybridSprite;
                     break;
             }
             spriteRenderer.color = lowResources ? lowResourceColor : normalColor;
