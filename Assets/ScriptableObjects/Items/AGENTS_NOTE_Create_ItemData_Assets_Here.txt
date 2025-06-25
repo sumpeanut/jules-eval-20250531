@@ -1,0 +1,40 @@
+Please use the Unity Editor to create the sample ItemData ScriptableObject assets in this directory (`Assets/ScriptableObjects/Items/`).
+
+You can do this by right-clicking in this folder in the Project window and selecting:
+"Create > Farming Game > Inventory > Item Data"
+
+Then, configure them as follows:
+
+1.  **CarrotSeed.asset**
+    *   Item Name: Carrot Seed
+    *   Description: Seeds to grow carrots.
+    *   Icon: (Assign a relevant sprite if available, otherwise leave null for now)
+    *   Is Stackable: true
+    *   Max Stack Size: 99
+    *   Item Shape: _1x1
+
+2.  **Tomato.asset**
+    *   Item Name: Tomato
+    *   Description: A ripe, juicy tomato.
+    *   Icon: (Assign a relevant sprite if available, otherwise leave null for now)
+    *   Is Stackable: true
+    *   Max Stack Size: 50
+    *   Item Shape: _1x1
+
+3.  **Shovel.asset**
+    *   Item Name: Shovel
+    *   Description: A sturdy shovel for digging.
+    *   Icon: (Assign a relevant sprite if available, otherwise leave null for now)
+    *   Is Stackable: false
+    *   Max Stack Size: 1
+    *   Item Shape: _1x3
+
+4.  **FertilizerBag.asset**
+    *   Item Name: Fertilizer Bag
+    *   Description: A bag of nutrient-rich fertilizer.
+    *   Icon: (Assign a relevant sprite if available, otherwise leave null for now)
+    *   Is Stackable: true
+    *   Max Stack Size: 10
+    *   Item Shape: _2x2
+
+After creating these assets, you can delete this placeholder .txt file.
