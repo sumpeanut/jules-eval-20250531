@@ -45,21 +45,41 @@ Implement a farming simulation system where players can place seeds in a grid, m
 ---
 
 ## Implementation Tasks
-- [ ] Design grid and cell data structures.
-- [ ] Implement seed placement logic.
-- [ ] Create plant growth system with resource checks.
-- [ ] Develop resource management UI and logic.
-- [ ] Implement hybridization detection and resolution.
-- [ ] Add visual feedback for plant states and events.
-- [ ] Write comprehensive tests for all systems.
+- [x] Design grid and cell data structures.
+- [x] Implement seed placement logic.
+- [x] Create plant growth system with resource checks.
+- [x] Develop resource management UI and logic.
+- [x] Implement hybridization detection and resolution.
+- [x] Add visual feedback for plant states and events.
+- [x] Write comprehensive tests for all systems.
 
 ---
 
-## Notes
-- Optimize for mobile performance (object pooling, efficient updates).
-- Use prefabs for plants and UI elements.
-- Organize scripts under `Assets/Scripts/Gameplay/Farming/`.
-- Document all public APIs and complex logic.
+## Next Steps: Grid & User Interaction
+
+### Grid Visualization & Management
+- Add a `FarmGrid` MonoBehaviour to a GameObject in the scene to instantiate and manage the visual grid.
+- Create a cell prefab (sprite, button, or UI element) to represent each grid cell visually (empty, planted, harvested).
+
+### User Interaction
+- Implement a seed selection UI for players to choose which plant to place.
+- Handle cell clicks/taps:
+  - If empty: show seed selection and allow planting.
+  - If a plant is present and mature: allow harvesting (remove plant, trigger reward/animation).
+- Ensure resource management UI can be shown/hidden for the selected cell.
+
+### Planting & Harvesting Logic
+- On seed selection and cell click, instantiate a `PlantBase` prefab with the correct `PlantData` at that cell.
+- Update the cell's state to "planted."
+- When a plant is mature and clicked, remove it and optionally trigger a reward or animation.
+
+### Scene Setup
+- Add a GameObject for the grid manager (`FarmGrid` and a new `FarmGridView` script).
+- Add a Canvas for UI (seed selection, resource management, etc.).
+- Create and assign prefabs for grid cells and plants.
+
+### Optional: Object Pooling
+- Use object pooling for plant and cell prefabs for mobile performance.
 
 ---
 
