@@ -29,6 +29,12 @@ namespace Game.UI.Inventory
         /// </summary>
         public void UpdateGrid()
         {
+            if (gridRoot == null)
+            {
+                var doc = GetComponent<UIDocument>();
+                gridRoot = doc != null ? doc.rootVisualElement.Q("grid-root") : null;
+            }
+
             if (gridRoot == null || inventoryGrid == null || inventoryGrid.Cells == null)
                 return;
 
