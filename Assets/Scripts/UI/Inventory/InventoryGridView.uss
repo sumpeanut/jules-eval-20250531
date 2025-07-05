@@ -1,0 +1,13 @@
+.inventory-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.inventory-cell {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #777;
+    margin: 1px;
+}
+.inventory-cell.item {
+    background-color: #6a6;
+}
